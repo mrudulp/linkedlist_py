@@ -5,6 +5,8 @@ class Node(object):
     '''
         Node class. Holds integer data and pointer to next Node if available
     '''
+    data = None
+    next_node = None
     def __init__(self, data=None, next_node=None):
 
         print "Data_{0}::Next_node::{1}".format(data, next_node)
