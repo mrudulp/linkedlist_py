@@ -21,7 +21,7 @@ class TestNode(unittest.TestCase):
         '''
             Verify integer as data is accepted and Node object is created
         '''
-        node = Node()
+        node = Node(1)
         self.assertIsInstance(node, Node)
 
     def test_rejects_string_as_data(self):
@@ -36,7 +36,7 @@ class TestNode(unittest.TestCase):
         '''
         self.assertRaises(ValueError, Node, 1.0)
 
-    def test_rejects_string_as_next_node(self):
+    def test_rejects_string_as_next(self):
         '''
             Verify String or Non Node instance is rejected and error is raised
         '''

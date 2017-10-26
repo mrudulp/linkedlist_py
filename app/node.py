@@ -10,9 +10,21 @@ class Node(object):
         print "Data_{0}::Next_node::{1}".format(data, next_node)
         data_type = (int)
         node_type = (Node)
-        if data or next_node:
-            if isinstance(data, data_type) and isinstance(next_node, node_type):
+        if data:
+            if isinstance(data, data_type):
                 self.data = data
+            else:
+                raise ValueError
+        if next_node:
+            if isinstance(next_node, node_type):
                 self.next_node = next_node
             else:
                 raise ValueError
+
+
+    def __str__(self):
+        return str(self.data)
+
+if __name__ == '__main__':
+    node = Node(1, None)
+    print node
