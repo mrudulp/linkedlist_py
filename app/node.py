@@ -9,24 +9,16 @@ class Node(object):
     next_node = None
     def __init__(self, data=None, next_node=None):
 
-        print "Data_{0}::Next_node::{1}".format(data, next_node)
-        data_type = (int)
-        node_type = (Node)
         if data:
-            if isinstance(data, data_type):
+            if isinstance(data, int):
                 self.data = data
             else:
-                raise ValueError
+                raise ValueError("Data arguments should be of type<int>")
         if next_node:
-            if isinstance(next_node, node_type):
+            if isinstance(next_node, Node):
                 self.next_node = next_node
             else:
-                raise ValueError
-
+                raise ValueError("Node argument should be of type<Node>")
 
     def __str__(self):
         return str(self.data)
-
-if __name__ == '__main__':
-    node = Node(1, None)
-    print node
